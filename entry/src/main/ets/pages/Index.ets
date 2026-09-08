@@ -1,8 +1,7 @@
 import Home from "../views/Home"
 import MenuPage from "../views/Menu"
-import ShopBag from  "../views/ShopBag"
-import My from  "../views/My"
-
+import ShopBag from "../views/ShopBag"
+import My from "../views/My"
 
 
 @Entry
@@ -10,7 +9,7 @@ import My from  "../views/My"
 struct Index {
   // 当前选中页签索引，驱动图片和文字同时刷新
   //@state定义状态变量：数据变化的同时，视图也会更新
-  //currentIndx: number = 0;数据变化，视图不会更新
+  //currentIndx: number = 0; 数据变化，视图不会更新
   @State currentIndex: number = 0;
 
   //Builder装饰器
@@ -25,7 +24,7 @@ struct Index {
       // 文字：选中/未选中切换颜色
       Text(label)
         .fontSize(12)
-        .fontColor(this.currentIndex === index ? $r("app.color.theme_color") : $r("app.color.dark_color"))
+        .fontColor(this.currentIndex === index ? $r("app.color.theme_blue") : $r("app.color.grey_color"))
     }
   }
 

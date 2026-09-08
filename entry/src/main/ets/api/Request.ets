@@ -19,22 +19,25 @@ let request = (url: string, method: string = "GET", params: object = Object({}))
   let httpRequest = http.createHttp();
   //请求方式
   let type = method == "GET" ? http.RequestMethod.GET : http.RequestMethod.POST
-//给参数params添加一个appkey属性
+  //给参数params添加一个appkey属性
   Object(params).appkey = APPKEY;
   //用实例发起网络请求
-  return  httpRequest.request(BASEURL + url, {
+  return httpRequest.request(BASEURL + url, {
     //请求方式
     method: type, // 可选，默认为http.RequestMethod.GET。
     //请求头
-    header:{
+    header: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    extraData:params,
+    extraData: params,
     //请求成功 返回数据格式
     expectDataType: http.HttpDataType.OBJECT, // 可选，指定返回数据的类型。
   })
-    //请求结束后销毁实例
-    .finally(() => {httpRequest.destroy();})
+  //请求结束后销毁实例
+    .finally(() => {
+      httpRequest.destroy();
+    })
 }
+
 //导出网络请求
 export default request;

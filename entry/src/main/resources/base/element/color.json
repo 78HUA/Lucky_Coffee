@@ -5,12 +5,16 @@
       "value": "#FFFFFF"
     },
     {
-      "name": "theme_color",
+      "name": "theme_blue",
       "value": "#1677FF"
     },
     {
-      "name": "dark_color",
+      "name": "grey_color",
       "value": "#999999"
+    },
+    {
+      "name": "background_grey",
+      "value": "#F8F8F8"
     }
   ]
 }
