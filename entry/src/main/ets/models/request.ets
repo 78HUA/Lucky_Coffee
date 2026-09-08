@@ -5,9 +5,9 @@ export interface BannerItem {
   pid: string;
 }
 
-// export  interface  BannerResponseBody{
-//   result: BannerItem[]
-// }
+export  interface  BannerResponseBody{
+  result: BannerItem[]
+}
 
 //首页商品列表
 export interface HomeGoodsItem {
@@ -26,15 +26,15 @@ export interface HomeGoodsItem {
   updatedAt: string;
 }
 
-// export  interface HomeGoodsResponseBody{
-//   result: HomeGoodsItem[]
-// }
+export  interface HomeGoodsResponseBody{
+  result: HomeGoodsItem[]
+}
 
 //商品的分类
-// export interface  {
-//   code: number;
-//   result: Result[];
-// }
+export interface  SideMenuResponseBody{
+  code: number;
+  result: SideMenu[];
+}
 
 export interface SideMenu {
   createdAt: string;
