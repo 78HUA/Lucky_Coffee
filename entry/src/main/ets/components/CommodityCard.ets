@@ -29,6 +29,8 @@ export default struct CommodityCard {
       Text(this.GoodsData.name)
         .fontSize(20)
         .width("100%")
+        .maxLines(1)
+        .textOverflow({overflow: TextOverflow.Ellipsis})
 
       Text(this.GoodsData.enname)
         .width("100%")

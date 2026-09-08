@@ -2,7 +2,6 @@ import { getProductType, getProductListByType } from "../api/Api"
 import { SideMenu, SideMenuResponseBody, HomeGoodsItem, HomeGoodsResponseBody } from "../models/request"
 import CommodityCard from "../components/CommodityCard";
 
-@Entry
   //自定义组件
 @Component
 export default struct MenuPage {
@@ -35,6 +34,7 @@ export default struct MenuPage {
     getProductListByType(_type)
       .then(res => {
         console.log("分类" + _type + "的商品有=>", JSON.stringify(res.result));
+        this.productList = Object(res.result).result;
       })
   }
 
@@ -72,7 +72,7 @@ export default struct MenuPage {
 
         }
         .width("35%")
-        .height("calc(100% - 50vp)")
+        .height("100%")
         .backgroundColor($r("app.color.background_grey"))
         .alignItems(HorizontalAlign.Start)
 
@@ -87,18 +87,16 @@ export default struct MenuPage {
             }
             .width("100%")
             .columnsTemplate('1fr 1fr') //分两列，两列宽度相等
-            // .rowsGap(12)
-            // .columnsGap(12)
+            .rowsGap(12)
+            .columnsGap(12)
+            .padding(10)
           }
-          .width("65%")
-          .height("100%")
-          .backgroundColor(Color.White)
-
         }
-
+        .layoutWeight(1)
+        .backgroundColor(Color.White)
       }
-
-
+      .width("100%")
+      .alignItems(VerticalAlign.Top)
     }
     .height("100%")
 
