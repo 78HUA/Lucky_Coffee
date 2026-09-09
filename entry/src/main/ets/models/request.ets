@@ -43,3 +43,31 @@ export interface SideMenu {
   typeDesc: string;
   updatedAt: string;
 }
+
+// ===== 账号：注册 / 登录（对应 API接口文档.md） =====
+
+// 注册请求参数（appkey 由 Request 统一附加）
+export interface RegisterRequestBody {
+  nickName: string;
+  phone: string;
+  password: string;
+}
+
+// 登录请求参数
+export interface LoginRequestBody {
+  phone: string;
+  password: string;
+}
+
+// 账号类接口通用响应（实测：注册成功 code=100；登录成功 code=200；失败返回 code!=成功码 并携带 msg）
+export interface AccountResponseBody {
+  code: number;
+  msg: string;
+}
+
+// 登录成功响应：额外携带 token（token 字段实测来自后端 /login）
+export interface LoginResponseBody {
+  code: number;
+  msg: string;
+  token: string;
+}

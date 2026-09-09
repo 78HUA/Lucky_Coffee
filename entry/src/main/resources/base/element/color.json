@@ -15,6 +15,38 @@
     {
       "name": "background_grey",
       "value": "#F8F8F8"
+    },
+    {
+      "name": "login_blue",
+      "value": "#0C34BA"
+    },
+    {
+      "name": "login_title_dark",
+      "value": "#444444"
+    },
+    {
+      "name": "login_label_grey",
+      "value": "#666666"
+    },
+    {
+      "name": "login_placeholder_grey",
+      "value": "#C8C9CC"
+    },
+    {
+      "name": "login_line_grey",
+      "value": "#F5F6F7"
+    },
+    {
+      "name": "login_border_grey",
+      "value": "#D8D8DA"
+    },
+    {
+      "name": "login_text_dark",
+      "value": "#323233"
+    },
+    {
+      "name": "login_error_red",
+      "value": "#FF4D4F"
     }
   ]
 }
