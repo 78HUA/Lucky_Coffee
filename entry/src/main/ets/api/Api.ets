@@ -1,5 +1,6 @@
 import Request from "./Request"
 import { http } from "@kit.NetworkKit";
+import { LoginRequestBody, RegisterRequestBody } from "../models/request";
 
 //发起网络请求
 let getBanner = (): Promise<http.HttpResponse> => {
@@ -38,6 +39,17 @@ let getProductListByType = (value: string): Promise<http.HttpResponse> => {
   }));
 }
 
+//注册账号（实测成功码 code=100）
+let registerAccount = (data: RegisterRequestBody): Promise<http.HttpResponse> => {
+  return Request("/register", "POST", data);
+}
+
+//登录账号（实测成功码 code=200，返回体携带 token）
+let loginAccount = (data: LoginRequestBody): Promise<http.HttpResponse> => {
+  return Request("/login", "POST", data);
+}
+
 export {
-  getBanner, getHomeProductList, getProductType, getProductListByType
+  getBanner, getHomeProductList, getProductType, getProductListByType,
+  registerAccount, loginAccount
 }
