@@ -19,6 +19,12 @@ const PWD_ERR_MSG: string = '密码需 6-16 位，且同时包含字母和数字
 const NICK_ERR_MSG: string = '昵称至少 2 个字符，且不能包含空格';
 const NET_ERR_MSG: string = '网络异常，请稍后重试';
 
+// 是否开启"已登录则自动进首页"：
+//   false（默认）= 每次打开/预览都停在登录页，只回填上次手机号
+//                  —— 调试、预览器、给老师演示时用这个，避免一进去就被跳走
+//   true          = 本地存有 token 时直接跳首页（真机上体验"记住登录"时改成 true）
+const AUTO_LOGIN_ENABLED: boolean = false;
+
 // 输入行参数：登录表单与注册弹窗复用同一个 @Builder FieldInput
 interface FieldParams {
   label: string;
@@ -69,20 +75,23 @@ struct LoginPage {
     return this.getUIContext().getHostContext() as common.UIAbilityContext;
   }
 
-  // 启动时：本地已有 token 说明登录过 -> 直接进首页；否则回填上次登录的手机号
+  // 启动时：先回填上次登录的手机号；只有开关打开且本地有 token 时才直接进首页
   aboutToAppear(): void {
     const ctx: common.UIAbilityContext = this.hostContext();
+    // 回填上次输入的手机号（不管是否自动登录，这一步都有用）
+    loadSavedPhone(ctx).then((savedPhone: string) => {
+      if (savedPhone.length > 0) {
+        this.phone = savedPhone;
+      }
+    });
+    // 自动登录默认关闭：避免预览器/调试时一进页面就被跳到首页（见顶部 AUTO_LOGIN_ENABLED）
+    if (!AUTO_LOGIN_ENABLED) {
+      return;
+    }
     loadSavedToken(ctx).then((token: string) => {
       if (token.length > 0) {
         this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' });
-        return;
       }
-      // 没登录过：把上次输入的手机号带回来，省得重敲
-      loadSavedPhone(ctx).then((savedPhone: string) => {
-        if (savedPhone.length > 0) {
-          this.phone = savedPhone;
-        }
-      });
     });
   }
 

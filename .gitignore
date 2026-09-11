@@ -10,3 +10,10 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
+
+# ---- 本地开发/工具产物（不属于应用源码，勿提交） ----
+/entry/.preview
+/.cache
+/.dsh-hvigor-tmp
+/.zcode
+/dsh-hdc-bridge-main
