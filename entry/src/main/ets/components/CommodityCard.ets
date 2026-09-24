@@ -39,7 +39,7 @@ export default struct CommodityCard {
         .maxLines(1)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
 
-      Text(`$${this.GoodsData.price}`)
+      Text(`¥${this.GoodsData.price}`)
         .width("100%")
         .fontSize(18)
         .fontColor(Color.Red)

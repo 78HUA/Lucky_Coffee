@@ -40,9 +40,17 @@ export default struct MenuPage {
 
   build() {
     Column() {
-      //1.顶部搜索栏
+      //1.顶部搜索栏（点一下直接跳搜索页：不弹键盘，真正的输入和搜索在搜索页里做）
       Search({ placeholder: "请输入搜索关键字" })
+        .enableKeyboardOnFocus(false)
         .margin({ left: 20, right: 20 })
+        .onClick(() => {
+          this.getUIContext().getRouter()
+            .pushUrl({ url: 'pages/SearchPage' })
+            .catch((err: Error) => {
+              console.error(`pushUrl to SearchPage failed, err=${JSON.stringify(err)}`);
+            });
+        })
 
       //2.页面内容
       Row() {
@@ -82,6 +90,15 @@ export default struct MenuPage {
               ForEach(this.productList, (item: HomeGoodsItem) => {
                 GridItem() {
                   CommodityCard({ GoodsData: item })
+                    .onClick(() => {
+                      // 点击商品卡片跳详情页，把商品 pid 通过路由参数带过去
+                      const params: Record<string, string> = { 'pid': item.pid };
+                      this.getUIContext().getRouter()
+                        .pushUrl({ url: 'pages/ShopDetail', params: params })
+                        .catch((err: Error) => {
+                          console.error(`pushUrl to ShopDetail failed, err=${JSON.stringify(err)}`);
+                        });
+                    })
                 }
               })
             }

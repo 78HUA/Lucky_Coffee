@@ -1,0 +1,275 @@
+[
+  {
+    "path": "/banner",
+    "params": {},
+    "status": 200,
+    "bytes": 493
+  },
+  {
+    "path": "/type",
+    "params": {},
+    "status": 200,
+    "bytes": 525
+  },
+  {
+    "path": "/typeProducts",
+    "params": {
+      "key": "isHot",
+      "value": "1"
+    },
+    "status": 200,
+    "bytes": 4030
+  },
+  {
+    "path": "/typeProducts",
+    "params": {
+      "key": "type",
+      "value": "latte"
+    },
+    "status": 200,
+    "bytes": 5172
+  },
+  {
+    "path": "/typeProducts",
+    "params": {
+      "key": "type",
+      "value": "coffee"
+    },
+    "status": 200,
+    "bytes": 5517
+  },
+  {
+    "path": "/typeProducts",
+    "params": {
+      "key": "type",
+      "value": "rena_ice"
+    },
+    "status": 200,
+    "bytes": 2012
+  },
+  {
+    "path": "/typeProducts",
+    "params": {
+      "key": "type",
+      "value": "fruit_tea"
+    },
+    "status": 200,
+    "bytes": 2229
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee001"
+    },
+    "status": 200,
+    "bytes": 733
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee002"
+    },
+    "status": 200,
+    "bytes": 738
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee003"
+    },
+    "status": 200,
+    "bytes": 787
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee004"
+    },
+    "status": 200,
+    "bytes": 735
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee005"
+    },
+    "status": 200,
+    "bytes": 745
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee006"
+    },
+    "status": 200,
+    "bytes": 665
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "coffee008"
+    },
+    "status": 200,
+    "bytes": 800
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "fruit_tea001"
+    },
+    "status": 200,
+    "bytes": 821
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "fruit_tea002"
+    },
+    "status": 200,
+    "bytes": 798
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "fruit_tea005"
+    },
+    "status": 200,
+    "bytes": 942
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte001"
+    },
+    "status": 200,
+    "bytes": 889
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte002"
+    },
+    "status": 200,
+    "bytes": 672
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte003"
+    },
+    "status": 200,
+    "bytes": 658
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte004"
+    },
+    "status": 200,
+    "bytes": 688
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte005"
+    },
+    "status": 200,
+    "bytes": 722
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte006"
+    },
+    "status": 200,
+    "bytes": 895
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte007"
+    },
+    "status": 200,
+    "bytes": 1025
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte008"
+    },
+    "status": 200,
+    "bytes": 1060
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "latte009"
+    },
+    "status": 200,
+    "bytes": 840
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "rena_ice001"
+    },
+    "status": 200,
+    "bytes": 769
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "rena_ice002"
+    },
+    "status": 200,
+    "bytes": 763
+  },
+  {
+    "path": "/productDetail",
+    "params": {
+      "pid": "rena_ice003"
+    },
+    "status": 200,
+    "bytes": 806
+  },
+  {
+    "path": "/search",
+    "params": {
+      "name": "咖啡"
+    },
+    "status": 200,
+    "bytes": 730
+  },
+  {
+    "path": "/search",
+    "params": {
+      "name": "拿铁"
+    },
+    "status": 200,
+    "bytes": 6382
+  },
+  {
+    "path": "/search",
+    "params": {
+      "name": "拿铁"
+    },
+    "status": 200,
+    "bytes": 6382
+  },
+  {
+    "path": "/search",
+    "params": {
+      "name": "冰"
+    },
+    "status": 200,
+    "bytes": 3542
+  },
+  {
+    "path": "/search",
+    "params": {
+      "name": "茶"
+    },
+    "status": 200,
+    "bytes": 700
+  }
+]

@@ -45,3 +45,11 @@ export function validateNickName(nickname: string): boolean {
   // \s 匹配任意空白字符（空格、制表符等）
   return !/\s/.test(nickname);
 }
+
+// 邮箱正则：本地部分@域名.后缀（够用即可，不做 RFC 全量校验）
+const EMAIL_REG: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/** 校验邮箱：合法返回 true（忘记密码页的「发送验证码」用） */
+export function validateEmail(email: string): boolean {
+  return EMAIL_REG.test(email);
+}

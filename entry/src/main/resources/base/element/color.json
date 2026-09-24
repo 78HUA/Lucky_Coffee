@@ -47,6 +47,34 @@
     {
       "name": "login_error_red",
       "value": "#FF4D4F"
+    },
+    {
+      "name": "detail_price_red",
+      "value": "#DC2626"
+    },
+    {
+      "name": "detail_text_dark",
+      "value": "#333333"
+    },
+    {
+      "name": "detail_text_grey",
+      "value": "#666666"
+    },
+    {
+      "name": "detail_chip_bg",
+      "value": "#F3F4F6"
+    },
+    {
+      "name": "detail_divider",
+      "value": "#F0F0F0"
+    },
+    {
+      "name": "detail_hero_bg",
+      "value": "#EEF2F7"
+    },
+    {
+      "name": "my_card_overlay",
+      "value": "#E6FFFFFF"
     }
   ]
 }

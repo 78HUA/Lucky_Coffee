@@ -43,16 +43,24 @@ export default struct Home {
         Row({ space: 10 }) {
           Text("你好")
 
-          Text("登录")
+          Text("欢迎！")
             .fontWeight(FontWeight.Bold)
         }
         .layoutWeight(1)
 
-        //右侧导航栏
+        //右侧导航栏（点一下直接跳搜索页：不弹键盘，真正的输入和搜索在搜索页里做）
         Search({
           placeholder: "请输入搜索关键词"
         })
+          .enableKeyboardOnFocus(false)
           .layoutWeight(2)
+          .onClick(() => {
+            this.getUIContext().getRouter()
+              .pushUrl({ url: 'pages/SearchPage' })
+              .catch((err: Error) => {
+                console.error(`pushUrl to SearchPage failed, err=${JSON.stringify(err)}`);
+              });
+          })
       }
       .width("100%")
       .backgroundColor(Color.White)
@@ -92,6 +100,15 @@ export default struct Home {
             ForEach(this.goodsList, (item: HomeGoodsItem) => {
               GridItem() {
                 Goods({ GoodsData: item })
+                  .onClick(() => {
+                    // 点击商品卡片跳详情页，把商品 pid 通过路由参数带过去
+                    const params: Record<string, string> = { 'pid': item.pid };
+                    this.getUIContext().getRouter()
+                      .pushUrl({ url: 'pages/ShopDetail', params: params })
+                      .catch((err: Error) => {
+                        console.error(`pushUrl to ShopDetail failed, err=${JSON.stringify(err)}`);
+                      });
+                  })
               }
             })
 

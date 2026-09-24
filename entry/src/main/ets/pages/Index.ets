@@ -11,6 +11,24 @@ struct Index {
   //@state定义状态变量：数据变化的同时，视图也会更新
   //currentIndx: number = 0; 数据变化，视图不会更新
   @State currentIndex: number = 0;
+  // 每次从别的页面回到本页就 +1，传给购物车页触发刷新（下完单回来能立刻看到变化）
+  @State cartTick: number = 0;
+
+  // 从别的页面（详情/搜索/订单结算…）返回时触发
+  onPageShow(): void {
+    this.cartTick++;
+  }
+
+  // 别的页面跳过来时可以指定要显示哪个页签
+  // （详情页点"购物袋"会带着 selectedIndex = 2 跳过来，直接停在购物车页签）
+  aboutToAppear(): void {
+    const params: Record<string, number> | undefined =
+      this.getUIContext().getRouter().getParams() as Record<string, number> | undefined;
+    const target: number | undefined = params?.selectedIndex;
+    if (target !== undefined) {
+      this.currentIndex = target;
+    }
+  }
 
   //Builder装饰器
   @Builder
@@ -47,7 +65,10 @@ struct Index {
 
       // 3. 购物车
       TabContent() {
-        ShopBag()
+        ShopBag({ activeIndex: this.currentIndex, cartTick: this.cartTick, onGoHome: () => {
+          // 购物车页顶栏点"< 返回"：切回首页页签
+          this.currentIndex = 0;
+        } })
       }
       .tabBar(this.TabItem(2, $r('app.media.shopbag'), $r('app.media.shopbag_active'), '购物车'))
 

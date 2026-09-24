@@ -3,6 +3,14 @@
     "pages/Index",
     "pages/LoginPage",
     "pages/ShopDetail",
-    "pages/SearchPage"
+    "pages/SearchPage",
+    "pages/OrderConfirm",
+    "pages/AddressEdit",
+    "pages/ProfilePage",
+    "pages/OrderList",
+    "pages/FavoriteList",
+    "pages/AddressList",
+    "pages/SecurityCenter",
+    "pages/ForgotPasswordPage"
   ]
 }

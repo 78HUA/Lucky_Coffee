@@ -6,7 +6,7 @@
 //  3) 登录/注册接真实后端 /login /register（POST 参数由 Request 统一序列化）
 //  4) 登录成功：token+手机号写入 Preferences（utils/Session.ets），replace 跳首页；
 //     再次启动时若已有 token 直接进首页，否则回填上次登录手机号
-import { router } from '@kit.ArkUI';
+import { router,PersistenceV2, Type, ConnectOptions, PromptAction } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import { loginAccount, registerAccount } from '../api/Api';
 import { validatePhone, validatePassword, validateNickName } from '../utils/validForm';
@@ -18,6 +18,7 @@ const PHONE_ERR_MSG: string = '请输入正确的 11 位手机号';
 const PWD_ERR_MSG: string = '密码需 6-16 位，且同时包含字母和数字';
 const NICK_ERR_MSG: string = '昵称至少 2 个字符，且不能包含空格';
 const NET_ERR_MSG: string = '网络异常，请稍后重试';
+
 
 // 是否开启"已登录则自动进首页"：
 //   false（默认）= 每次打开/预览都停在登录页，只回填上次手机号
@@ -455,7 +456,12 @@ struct LoginPage {
         .padding({ right: 14 })
         .margin({ top: 20 })
         .onClick(() => {
-          this.toast('请联系管理员重置密码');
+          // 跳「忘记密码」页（重置密码成功后会自动回到本页）
+          this.getUIContext().getRouter()
+            .pushUrl({ url: 'pages/ForgotPasswordPage' })
+            .catch((err: Error) => {
+              console.error(`pushUrl to ForgotPasswordPage failed, err=${JSON.stringify(err)}`);
+            });
         })
 
       // 登录按钮：请求中显示"登录中..."且不可重复点击
