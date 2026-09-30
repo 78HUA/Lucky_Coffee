@@ -6,6 +6,30 @@
 
 ---
 
+## 运行效果
+
+> 运行截图共 **33 张**，全部在 [`screenshots/`](./screenshots) 目录；下面按主要流程展示其中 16 张。
+
+| 登录 | 注册（弹层） | 忘记密码 | 首页 |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/01-login.png" width="190"/> | <img src="screenshots/02-register-sheet.png" width="190"/> | <img src="screenshots/03-forgot-password.png" width="190"/> | <img src="screenshots/04-home.png" width="190"/> |
+
+| 分类菜单 | 搜索（含历史） | 商品详情 | 购物袋（全选合计） |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/05-menu.png" width="190"/> | <img src="screenshots/06-search.png" width="190"/> | <img src="screenshots/07-detail.png" width="190"/> | <img src="screenshots/08-cart-checked.png" width="190"/> |
+
+| 订单结算 | 选择地址 | 我的订单 | 安全中心 |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/09-checkout.png" width="190"/> | <img src="screenshots/10-address-sheet.png" width="190"/> | <img src="screenshots/11-orders-all.png" width="190"/> | <img src="screenshots/12-security.png" width="190"/> |
+
+| 我的收藏 | 地址管理 | 个人中心 | 个人资料 |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/13-favorites.png" width="190"/> | <img src="screenshots/14-address-list.png" width="190"/> | <img src="screenshots/15-my.png" width="190"/> | <img src="screenshots/16-profile.png" width="190"/> |
+
+其余 17 张（购物袋的未登录/常规/左滑删除/编辑模式、订单三个页签与删除确认、地址新增/编辑/省市区选择器、修改密码弹窗、注销与退出确认、详情页已收藏状态等）同样在 [`screenshots/`](./screenshots) 目录里，文件名按流程顺序编号。
+
+---
+
 ## 一、项目概览
 
 | 项 | 值 |
